@@ -87,7 +87,7 @@
 					<div id="divHist1"></div>
 				</div>
 				<div class="col-sm-6">
-					<h3 class='mapTitle'>Employed</h3><p>Percentage of the population, aged 16 and up, who are employed.</p>
+					<h3 class='mapTitle'>Higher Education and Poverty</h3><p>Percentage of the population who has a bachelor's degree or higher and living in poverty.</p>
 					<div id="divMap2"></div>
 					<div id="divHist2"></div>
 				</div>
@@ -95,12 +95,12 @@
 
 			<div class="row">
 				<div class="col-sm-6">
-					<h3 class='mapTitle'>Adults in Poverty</h3><p>Percentage of adults, aged 18 and above, who live below the poverty line.</p>
+					<h3 class='mapTitle'>Percent of Females in Poverty</h3><p>Percent of female population with a Bachelor's degree or higher and in poverty.</p>
 					<div id="divMap3"></div>
 					<div id="divHist3"></div>
 				</div>
 				<div class="col-sm-6">
-					<h3 class='mapTitle'>Median Rent</h3><p>The median amount of rent.</p>
+					<h3 class='mapTitle'>Percent of Male in Poverty</h3><p>Percent of Male population with a Bachelor's degree or higher and in poverty.</p>
 					<div id="divMap4"></div>
 					<div id="divHist4"></div>
 				</div>
@@ -116,7 +116,7 @@
 
 	/////////////////////////////////////////////////////////////////////////////////////////////////
 	// TODO: Change the variables below to customize the small multiples interface for your data
-	var polygonJSONFile = 'data/wash_state_demoInfo.geojson'
+	var polygonJSONFile = 'data/wash_counties_ed_pov.geojson'
 	// change the projection if needed *d3.geoAlbers()*
 	var projection = d3.geoAlbers().rotate([120,0]);
 	var widthheightRatio = 0.9;
@@ -127,7 +127,7 @@
 	var legendX = 0, legendY = 0.2
 
 	// id attribute and the name attribute to be used in the tooltip
-	var idAttribute = 'GEOID', nameAttribute = 'Wash_data_clean2019_DataNAME';
+	var idAttribute = 'GEOID', nameAttribute = 'NAME';
 
 	// Find the abbreviations of color names from https://colorbrewer2.org/
 	var colors =  colorbrewer.RdPu;
@@ -139,17 +139,17 @@
 	// att1format: enter the d3.format string to display the variables in the format you like
 	// Check this link on how to specify the desired format:
 	// https://observablehq.com/@d3/d3-format
-	var att1 = 'Wash_data_clean2019_TwentyFiveup_bachUp', att1alias = '% Bachelors degree or higher', att1format = '.0f',
-	att2 = 'Wash_data_clean2019_pct_employed', att2alias =  '% Employed', att2format = '.0f',
-	att3 = 'Wash_data_clean2019_below_pov_eighteenup', att3alias = '% adults below poverty', att3format = '.0f',
-	att4 = 'Wash_data_clean2019_median_rent', att4alias = '$ median rent', att4format = '.0f';
+	var att1 = 'wash_state_ed_pov_2019 Sheet1_tot_bachUp', att1alias = '% Bachelors degree or higher', att1format = '.0f',
+	att2 = 'wash_state_ed_pov_2019 Sheet1_pct_pov_bachUp', att2alias =  '% poverty with a bachelors or higher', att2format = '.0f',
+	att3 = 'wash_state_ed_pov_2019 Sheet1_pct_female_pov_bachUp', att3alias = '% female bach or higher in poverty', att3format = '.0f',
+	att4 = 'wash_state_ed_pov_2019 Sheet1_pct_male_pov_bachUp', att4alias = '% male bach or higher in poverty', att4format = '.0f';
 
   // enter below all variables that should be normalized. If you would like to multiple the variables
 	// with a constant value enter them in multiplyBy array. If there is no need for multiplication,
 	// simply enter 1 for each value in multiplyBy.
-  var attributesToBeNormalized = [att1, att3];
-	var multiplyBy = [100, 100];
-	var divideBy = ['Wash_data_clean2019_totpop', 'Wash_data_clean2019_totpop'];
+  var attributesToBeNormalized = [att1];
+	var multiplyBy = [100];
+	var divideBy = ['wash_state_ed_pov_2019 Sheet1_totpop'];
 	// if your variables are not raw counts and they are already normalized, comment out above, and
 	//uncomment below:
 	// var attributesToBeNormalized = [];
