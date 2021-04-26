@@ -119,15 +119,15 @@
 	var polygonJSONFile = 'data/wash_counties_ed_pov04.geojson'
 	// change the projection if needed *d3.geoAlbers()*
 	var projection = d3.geoAlbers().rotate([120,0]);
-	var widthheightRatio = 0.5;
+	var widthheightRatio = 0.6;
 	// Relative placement of legend that ranges between 0 and 1.
 	// 0 is the start, whereas 1 i the end of each panel.
 	// If you want to put the legend on the left, then use 0.
 	// legendY = 0.5 puts the legend in the middle of the Y Axis.
-	var legendX = 0, legendY = 0.2
+	var legendX = 0, legendY = 0.6
 
 	// id attribute and the name attribute to be used in the tooltip
-	var idAttribute = 'COUNTYFP', nameAttribute = 'NAME';
+	var idAttribute = 'COUNTYFP', nameAttribute = 'wash_state_ed_pov_2019_NAME';
 
 	// Find the abbreviations of color names from https://colorbrewer2.org/
 	var colors =  colorbrewer.RdPu;
