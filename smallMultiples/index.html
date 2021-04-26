@@ -116,7 +116,7 @@
 
 	/////////////////////////////////////////////////////////////////////////////////////////////////
 	// TODO: Change the variables below to customize the small multiples interface for your data
-	var polygonJSONFile = 'data/wash_counties_ed_pov03.geojson'
+	var polygonJSONFile = 'data/wash_counties_ed_pov04.geojson'
 	// change the projection if needed *d3.geoAlbers()*
 	var projection = d3.geoAlbers().rotate([120,0]);
 	var widthheightRatio = 0.5;
@@ -139,17 +139,17 @@
 	// att1format: enter the d3.format string to display the variables in the format you like
 	// Check this link on how to specify the desired format:
 	// https://observablehq.com/@d3/d3-format
-	var att1 = 'wash_state_ed_pov_2019_tot_bachUp', att1alias = '% Bachelors degree or higher', att1format = '.0f',
-	att2 = 'wash_state_ed_pov_2019_pct_pov_bachUp', att2alias =  '% poverty with a bachelors or higher', att2format = '.0f',
-	att3 = 'wash_state_ed_pov_2019_pct_female_pov_bachUp', att3alias = '% female bach or higher in poverty', att3format = '.0f',
-	att4 = 'wash_state_ed_pov_2019_pct_male_pov_bachUp', att4alias = '% male bach or higher in poverty', att4format = '.0f';
+	var att1 = 'tot_bachUp', att1alias = '% Bachelors degree or higher', att1format = '.0f',
+	att2 = 'pct_pov_bachUp', att2alias =  '% poverty with a bachelors or higher', att2format = '.0f',
+	att3 = 'pst_female_pov_bachUp', att3alias = '% female bach or higher in poverty', att3format = '.0f',
+	att4 = 'pst_male_pov_bachUp', att4alias = '% male bach or higher in poverty', att4format = '.0f';
 
   // enter below all variables that should be normalized. If you would like to multiple the variables
 	// with a constant value enter them in multiplyBy array. If there is no need for multiplication,
 	// simply enter 1 for each value in multiplyBy.
   var attributesToBeNormalized = [att1];
 	var multiplyBy = [100];
-	var divideBy = ['wash_state_ed_pov_2019 Sheet1_totpop'];
+	var divideBy = ['totpop'];
 	// if your variables are not raw counts and they are already normalized, comment out above, and
 	//uncomment below:
 	// var attributesToBeNormalized = [];
