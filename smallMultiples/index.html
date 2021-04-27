@@ -58,7 +58,7 @@
 			<hr />
 			<div class="row">
 				<div class="col-sm-4">
-					<p>Data from <a href="https://www.census.gov/acs/www/data/data-tables-and-tools/data-profiles/2019/">US Census Bureau</a>, maps by US Census Bureau.</p>
+					<p>Data from <a href="https://www.census.gov/acs/www/data/data-tables-and-tools/data-profiles/2019/">US Census Bureau</a>, maps by US Census Bureau and edited by Kaitlin Schlotfelt. In these maps you can interact between all four variables to easily compare the data in each county. You can also change how many classes and what kind of classification menthod you would like to see each variable displayed in.</p>
 				</div>
 				<div class='col-sm-8 mapButtons'>
 					<span class="pull-right">
@@ -140,9 +140,9 @@
 	// Check this link on how to specify the desired format:
 	// https://observablehq.com/@d3/d3-format
 	var att1 = 'tot_bachUp', att1alias = '% Bachelors degree or higher', att1format = '.0f',
-	att2 = 'pct_pov_bachUp', att2alias =  '% poverty with a bachelors or higher', att2format = '.0f',
-	att3 = 'pst_female_pov_bachUp', att3alias = '% female bach or higher in poverty', att3format = '.0f',
-	att4 = 'pst_male_pov_bachUp', att4alias = '% male bach or higher in poverty', att4format = '.0f';
+	att2 = 'pct_pov_bachUp', att2alias =  '% poverty with a bachelors degree or higher', att2format = '.0f',
+	att3 = 'pst_female_pov_bachUp', att3alias = '% female bachelors degree or higher in poverty', att3format = '.0f',
+	att4 = 'pst_male_pov_bachUp', att4alias = '% male bachelors degree or higher in poverty', att4format = '.0f';
 
   // enter below all variables that should be normalized. If you would like to multiple the variables
 	// with a constant value enter them in multiplyBy array. If there is no need for multiplication,
@@ -256,7 +256,7 @@
 					if(buttonid == "ckmButton"){
 						$(".container").fadeOut(200);
 						functionAlert("Maps cannot be compared visually when natural breaks classification is selected. " +
-					  "Because natural breaks focuses on the recise distribution of each attribute along the number line.");
+					  "Because natural breaks focuses on the precise distribution of each attribute along the number line.");
 					}else if(buttonid == "eqIntButton"){
 						$(".container").fadeOut(200);
 						functionAlert("When equal interval classification is selected, all maps should be"
