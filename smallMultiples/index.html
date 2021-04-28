@@ -422,8 +422,9 @@
 						d3.select(tip)
 						.style('display', null)
 						//.html("<p><b>" + name + " "+ nameAttribute + "</b><br/>" + d.var +
-						.html("<p><b>" + name + " "+ "County" + "</b><br/>" + d.ax +
-						": " + d3.format(d.form)(polygon.properties[d.var]) + "</p>");
+						//": " + d3.format(d.form)(polygon.properties[d.var]) + "</p>");
+						.html("<p><b>" + name + " "+ "County" + "</b><br/>" + d3.format(d.form)(polygon.properties[d.var])
+						+ d.ax  + "</p>");
 					});
 				}
 
